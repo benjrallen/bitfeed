@@ -1,0 +1,252 @@
+@import 'partials/base';
+
+body{
+	min-width: $base-width;
+	width: 100%;
+	background: $grayLighter;
+}
+
+#loading{
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 200;
+	background: $base-white;
+	
+	& .line{
+		height: 100%;
+		margin-left: -1px;
+		width: 1px;
+	}
+	
+	& .line, & .text{
+		@include inline-block;
+		vertical-align: middle;
+	}
+	
+	& .text{
+		@include adjust-font-size-to( 18px );
+	}
+}
+
+#feed{
+	background: $base-white;
+	//height: 100%;
+	display: block;
+	position: relative;
+
+	& #list-info{
+		//display: block;
+		//height: 100%;
+		
+		position: absolute;
+		left: 0;
+		top: 0;
+		
+		@include padding-leader;
+		
+		& header{
+			@include margin-trailer;
+			
+			& h1{
+				@include adjust-font-size-to( 22px );
+				@include padding-trailer( 0.5 );
+				
+				& .icon, & .text{
+					@include inline-block;
+					vertical-align: middle;
+				}				
+			}
+			
+			& .icon{
+				max-width: 15%;
+				margin-right: 0.5em;
+				
+				& img{
+					display: block;
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+	}
+	
+	& #list-cont{
+		position: relative;
+		display: block;
+		//height: 100%;
+	}
+	& .list-list{
+		@include padding-leader;
+		@include padding-trailer;
+		padding-right: 20px;
+		$pad: 0.75;
+		
+		& .list-item{
+			padding-left: 92px;
+			position: relative;
+			border-bottom: 1px solid $grayLighter;
+			min-height: 80px;
+			@include padding-leader($pad);
+			@include padding-trailer($pad);
+			@include single-transition( background, 0.15s, ease-in-out );
+			cursor: pointer;
+			cursor: hand;
+			
+			&:hover{
+				background: $grayLighter;
+			}
+			
+			& .item-head{
+
+				& .pic{
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 80px;
+					@include padding-leader($pad);
+					@include padding-trailer($pad);
+				}
+				
+				& .text{
+					@include adjust-font-size-to( 18px );
+				}
+			}
+			& .time{
+				@include margin-trailer( 0.5 );
+			}
+
+			& .content{
+			}
+			& .time, & .content{
+				display: block;
+			}
+			
+		}
+
+	}
+	
+}
+
+.item-head{
+	& .pic, & .text{
+		@include inline-block;
+		vertical-align: middle;
+	}
+	
+	& .pic{
+		text-align: center;
+		margin-right: 12px;
+		
+		& img{
+			margin: 0;
+		}
+		& .text{
+			@include adjust-font-size-to( 18px );
+		}
+	}
+}
+
+#leaf-cont{
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	left: -9999em;
+	height: 100%;
+	width: 100%;
+	//background: #bad;
+	//@include opacity( 0.5 );
+	
+	& #leaf{
+		position: relative;
+		height: 100%;
+		
+		& .wrap{
+			background: $base-white;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			overflow-y: scroll;
+		}
+		& article{
+			padding-right: 20px;
+			padding-left: 118px;
+			position: relative;
+			$pad: 0.75;
+			& .item-head{
+				@include padding-leader($pad * 2);
+				@include padding-trailer($pad);
+
+				& .pic{
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100px;
+					@include padding-leader($pad * 2);
+					@include padding-trailer($pad);
+				}
+				
+				& .text{
+					@include adjust-font-size-to( 22px );
+				}
+			}
+			
+			& .author{
+				@include adjust-font-size-to( 14px, 1.25 );
+			}
+			& .time{
+				@include margin-trailer( 0.5 );
+			}
+			& .links{
+				@include margin-trailer(0.75);
+				& a{
+					display: block;
+					@include margin-trailer(0.25);
+				}
+			}
+				
+			& ul{
+				display: none;
+			}
+			& .item-format{
+				@include float-right;
+				list-style: none outside;
+				margin-left: 1em;
+				
+				& .label, & .value{
+					@include inline-block;
+					vertical-align: middle;
+				}
+				& .label{ 
+					font-weight: bold;
+					width: 86px;
+				}
+				& .value{}
+			}
+			& .content{
+				@include adjust-font-size-to( 14px, 1.25 );
+			}
+			& .time, & .content{
+				display: block;
+			}
+		}
+		
+		& #leaf-nav{
+			@include float-right;
+			@include margin-leader();
+			padding-right: 20px;
+			
+			& button{
+				margin-left: 1.5em;
+			}
+		}
+		& #leaf-back{
+			@include margin-leader();
+		}
+		
+	}
+}

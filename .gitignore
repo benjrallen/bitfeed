@@ -1,0 +1,83 @@
+# GuRuStu .gitignore
+
+
+# json caches
+*.json
+
+#
+# Wordpress
+#
+
+.htaccess
+wp-config.php
+wp-content/backup-db/*
+wp-content/cache/*
+wp-content/cache/supercache/*
+wp-content/upgrade/*
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/uploads/
+sitemap.xml
+sitemap.xml.gz
+
+
+#
+# Max OSX
+#
+
+.DS_Store?
+Icon?
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+#
+# Windows
+#
+
+# Windows image file caches
+Thumbs.db 
+
+# Folder config file
+Desktop.ini
+
+#
+# Linux/Unix
+#
+
+.*
+*~
+!.gitignore
+
+#
+# Emacs
+#
+
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+
+#
+# TextMate
+#
+
+*.tmproj
+*.tmproject
+tmtags
+
+#
+# vim
+#
+
+#.*.sw[a-z]
+*.un~
+
+

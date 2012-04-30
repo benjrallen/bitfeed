@@ -1,0 +1,114 @@
+// This file must be imported before loading html5-boilerplate
+
+$base-font-family: unquote('sans-serif');  // default font-family
+
+$base-font-size: 13px;  // default font-size for YUI fonts
+
+$base-line-height: 1.231;  // default line-height for YUI fonts
+
+$font-color: #444;
+
+$link-color: #607890;
+
+$link-hover-color: #036;
+
+$link-active-color: #607890;
+
+$link-visited-color: #607890;
+
+@import "compass_twitter_bootstrap";
+
+//typography
+@import "compass/typography";
+
+
+
+//utilities
+@import "compass/utilities";
+
+//and css3
+@import "compass/css3/pie";
+@import "compass/css3";
+
+
+
+$base-color: #666;
+
+$base-orange: #e37222;
+$base-green: #51a601;
+
+$base-orange: desaturate( red, 40% );
+$base-green: darken( #badaff, 60% );
+
+//$base-green: #B6DF91;
+$base-green-light: #CBFBA1;
+$base-green-dark: #999D43;
+
+$base-header-color: #BF8300;
+
+$base-button-color: #FF6400;
+
+$base-grey: #565a5c;
+$base-white: #fefefe;
+
+$base-hover-opacity: 0.7;
+
+$base-width: 980px;
+
+$base-transition-time: 0.1s;
+
+
+$base-bg: #fff;
+
+$box-bg: #fff;
+
+$rad: 6px;
+
+$base-font-size: 12px;
+$base-line-height: 16px;
+
+$input-height: 30px;
+$input-font-size: 12px;
+
+$link-color: $base-color;
+
+$link-hover-color: lighten( $base-color, 10% );
+
+$link-active-color: lighten( $base-color, 5% );
+
+$link-visited-color: $base-color;
+
+$selected-font-color: #fff;  // color for selected text
+
+$selected-background-color: lighten( $base-button-color, 20% );;  // bg-color for selected text
+
+
+//radial gradients in ie9 & opera
+$experimental-support-for-svg: true;
+
+
+@include establish-baseline(12px);
+
+
+
+//$pie-behavior: url("/PIE.htc");
+$pie-behavior: url("/PIE.php");
+//$pie-behavior: url("/~ben/owasso/PIE.php"); //CHANGE THIS ON LAUNCH!!!
+$pie-base-class: pie;
+.pie{
+	@include pie-element(relative);
+}
+
+@mixin pie-png-fix{
+	-pie-png-fix: true;	
+}
+
+//to use:
+//#someEl{
+//	@include pie;
+//	@include background-image(linear-gradient(top center, white, $base-color));
+//	-pie-background: linear-gradient(top center, white, $base-color); //cause background images require that key in pie.
+//}
+
+
+@import "partials/_mixins";
